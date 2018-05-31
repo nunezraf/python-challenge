@@ -12,12 +12,12 @@ candidates_percent = {}
 winner = ""
 winner_count = 0
 
-# reading file as csv.reader 
+# reading file as csv.reader with open stament 
 with open(csvpath, newline = "") as csvfile:
     csvreader = csv.reader(csvfile, delimiter = ",")
     next(csvreader, None)
 
-    # finding total vote count; finding individual vote counts
+    # finding total vote count; finding individual vote counts using a for loop 
     for row in csvreader:
         vote_count += 1
         if row[2] in candidates.keys():
@@ -25,7 +25,7 @@ with open(csvpath, newline = "") as csvfile:
         else:
             candidates[row[2]] = 1
 
-# percentages for each candidate
+# percentages for each candidate 
 for key, value in candidates.items():
     candidates_percent[key] = round((value/vote_count) * 100, 2)
 
@@ -53,9 +53,9 @@ print("Winner: " + winner)
 print("-------------------------------------")
 
 # creating new text file
-new_file = open("Output.txt", "w")
+new_file = open("Output1.txt", "w")
 
-# writing the new file
+# writing the new file with the results 
 new_file.write("Election Results \n")
 new_file.write("------------------------------------- \n")
 new_file.write("Total Votes: " + str(vote_count) + "\n")
@@ -65,3 +65,4 @@ for key, value in candidates.items():
 new_file.write("------------------------------------- \n")
 new_file.write("Winner: " + winner + "\n")
 new_file.write("------------------------------------- \n")
+

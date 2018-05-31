@@ -4,7 +4,7 @@ import csv
 import sys
 # '..','Pybank', 'budget_data_1.csv'
 # setting path
-csvpath =  os.path.join( '..','Pybank','budget_data_1.csv')
+csvpath =  os.path.join( '..','Pybank','budget_data_2.csv')
 
 # declaring variables to assing values 
 total_months = 0
@@ -46,7 +46,7 @@ print("Greatest Decrease in Revenue: " + greatest_dec_date +
 " ($" + str(greatest_dec) + ")")
 
 # creating the new txt file
-new_file = open("output.txt", "w")
+new_file = open("output2.txt", "w")
 
 # writing the text file
 new_file.write("Financial Analysis \n")
